@@ -17,7 +17,6 @@ def fetch_price_from_binance(ticker: str, amount: float, currency: str):
             'currency': currency,
             'api_url': API_URL,
             'exchange_name': 'Binance',
-            'time': datetime.datetime.now()
         }
     except Exception as e:
         print(e)
