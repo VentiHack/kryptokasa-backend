@@ -14,7 +14,7 @@ def fetch_price_from_zonda(ticker: str, amount: float, currency: str):
             'asset_price': float(data['ticker']['lowestAsk']) * amount,
             'ticker': ticker,
             'currency': currency,
-            'api_url': API_URL,
+            'api_url': 'https://zondacrypto.com/pl/home',
             'exchange_name': 'Zonda',
         }
     except Exception as e:
