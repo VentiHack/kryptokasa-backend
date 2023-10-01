@@ -15,7 +15,7 @@ git clone https://github.com/VentiHack/kryptokasa-backend.git
 cd kryptokasa-backend
 ```
 ```bash
-cd pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 ```bash
 python3 manage.py migrate
