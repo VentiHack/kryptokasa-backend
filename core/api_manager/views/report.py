@@ -28,5 +28,5 @@ class ReportView(View):
             # 'pdf': File(pdf_content, name=pdf_file_path),
             'pdf_file_path': pdf_file_path,
             'pdf_filename': pdf_filename,
-        }, status=status.HTTP_201_CREATED)
+        }, status=status.HTTP_200_OK)
         return response

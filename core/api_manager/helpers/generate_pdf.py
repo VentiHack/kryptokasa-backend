@@ -19,9 +19,9 @@ def generate_pdf(body_data):
     report = model_to_dict(report_obj)
     nazwa_raportu = f"raport_{report['id']}"
     pdf_filename = f"{nazwa_raportu}.pdf"
-    if not os.path.isdir('media/rekordy'):
-        os.makedirs('media/rekordy')
-    pdf_file_path = os.path.join('media/rekordy/', pdf_filename)
+    if not os.path.isdir('media/raporty'):
+        os.makedirs('media/raporty')
+    pdf_file_path = os.path.join('media/raporty/', pdf_filename)
     pdfmetrics.registerFont(TTFont('LatoRegular', 'static/fonts/Lato/Lato-Regular.ttf'))
     pdfmetrics.registerFont(TTFont('LatoBold', 'static/fonts/Lato/Lato-Bold.ttf'))
     doc = SimpleDocTemplate(pdf_file_path, pagesize=A4)
@@ -43,7 +43,9 @@ def generate_pdf(body_data):
                 f"{format_with_thousands(asset_data['asset_price'])} zł",
             ])
             ctr += 1
-        data.append(['', 'Nazwa', "Symbol", "Giełda", 'Kurs [zł]', 'Wartość [zł]', ])
+        data.append(['', '', "", "Średnia:",
+                      f"{format_with_thousands(result['average_unit_price'])} zł",
+                     f"{format_with_thousands(result['average_asset_price'])} zł", ])
 
     data.append(['', '', '', '', 'Łącznie wartość', f"{format_with_thousands(body_data['total_value'])} zł"])
     table = Table(data)
@@ -75,7 +77,6 @@ def generate_pdf(body_data):
         textColor='#000000',
     )))
     elements.append(Spacer(1, 10))
-    # elements.append(Paragraph(text=f"Numer ID raportu: {report['id']}", style=ParagraphStyle(
     elements.append(Paragraph(text=f"Numer ID raportu: {report['id']}", style=ParagraphStyle(
         name='CustomStyle',
         fontName='LatoRegular',
