@@ -15,7 +15,7 @@ def fetch_price_from_binance(ticker: str, amount: float, currency: str):
             'asset_price': float(data['ticker']['lowestAsk']) * 0.98 * amount,
             'ticker': ticker,
             'currency': currency,
-            'api_url': API_URL,
+            'api_url': 'https://www.binance.com/pl',
             'exchange_name': 'Binance'
         }
     except Exception as e:

@@ -15,7 +15,7 @@ def fetch_price_from_okx(ticker: str, amount: float, currency: str):
             'asset_price': float(data['ticker']['lowestAsk']) * 1.05 * amount,
             'ticker': ticker,
             'currency': currency,
-            'api_url': API_URL,
+            'api_url': 'https://www.okx.com/pl',
             'exchange_name': 'OKX'
         }
     except Exception as e:
