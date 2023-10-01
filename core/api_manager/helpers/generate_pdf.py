@@ -42,11 +42,11 @@ def generate_pdf(body_data):
                 f"{format_with_thousands(asset_data['unit_price'])} zł",
                 f"{format_with_thousands(asset_data['asset_price'])} zł",
             ])
-            ctr += 1
+
         data.append(['', '', "", "Średnia:",
                       f"{format_with_thousands(result['average_unit_price'])} zł",
                      f"{format_with_thousands(result['average_asset_price'])} zł", ])
-
+        ctr += 1
     data.append(['', '', '', '', 'Łącznie wartość', f"{format_with_thousands(body_data['total_value'])} zł"])
     table = Table(data)
     table.setStyle(TableStyle([

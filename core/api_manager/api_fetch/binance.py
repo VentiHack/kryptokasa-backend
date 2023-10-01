@@ -11,8 +11,8 @@ def fetch_price_from_binance(ticker: str, amount: float, currency: str):
         response = requests.get(f"{API_URL}/trading/ticker/{trading_pair}")
         data = response.json()
         return {
-            'unit_price': float(data['ticker']['lowestAsk']) * 0.9,
-            'asset_price': float(data['ticker']['lowestAsk']) * 0.9 * amount,
+            'unit_price': float(data['ticker']['lowestAsk']) * 0.98,
+            'asset_price': float(data['ticker']['lowestAsk']) * 0.98 * amount,
             'ticker': ticker,
             'currency': currency,
             'api_url': API_URL,
