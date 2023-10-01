@@ -9,7 +9,7 @@ Short description of the app.
 2. Clone this repository:
 
 ```bash
-git clone https://github.com/VentiHack/kryptokasa-backend
+git clone https://github.com/VentiHack/kryptokasa-backend.git
 ```
 ```bash
 cd kryptokasa-backend
