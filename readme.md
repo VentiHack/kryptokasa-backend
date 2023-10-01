@@ -15,7 +15,7 @@ git clone https://github.com/VentiHack/kryptokasa-backend.git
 cd kryptokasa-backend
 ```
 ```bash
-py -m venv venv
+python3 -m venv venv
 ```
 ```bash
 .\venv\Scripts\activate
