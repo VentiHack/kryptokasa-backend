@@ -1,6 +1,7 @@
 from rest_framework.routers import SimpleRouter
 
 from core.api_manager.views.pricing import PricingView
+from core.api_manager.views.report import ReportView
 from core.api_manager.viewsets.asset import AssetViewSet
 from core.user.viewsets import UserViewSet
 from core.auth.viewsets import LoginViewSet, RegistrationViewSet, RefreshViewSet
@@ -21,5 +22,6 @@ routes.register(r'assets', AssetViewSet,
 routes.register(r'user', UserViewSet, basename='user')
 urlpatterns = [
     path("pricing/", PricingView.as_view(), name="pricing"),
+    path("report/", ReportView.as_view(), name="report"),
     *routes.urls
 ]

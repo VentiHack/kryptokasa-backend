@@ -14,6 +14,6 @@ class AssetViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         # if self.request.user.is_superuser:
-        return Asset.objects.all().order_by('ticker')
+        return Asset.objects.all().order_by('name')
 
     
