@@ -15,11 +15,15 @@ git clone https://github.com/VentiHack/kryptokasa-backend.git
 cd kryptokasa-backend
 ```
 ```bash
-pip3 install -r requirements.txt
+py -m venv venv
 ```
 ```bash
-python3 manage.py migrate
+.\venv\Scripts\activate
 ```
+```bash
+pip3 install -r requirements.txt
+```
+
 ```bash
 python3 manage.py runserver
 ```
